@@ -5,7 +5,7 @@ Defines a class Rectangle
 
 
 class Rectangle:
-     """Representation of a rectangle"""
+    """Representation of a rectangle"""
     def __init__(self, width=0, height=0):
         """Initializes the rectangle"""
         self.height = height
@@ -34,7 +34,7 @@ class Rectangle:
         def height(self, value):
             """setter for the private instance attribute height"""
             if type(value) is not int:
-            raise TypeError("height must be an integer")
-        if value < 0:
-            raise ValueError("height must be >= 0")
+                raise TypeError("height must be an integer")
+            if value < 0:
+                raise ValueError("height must be >= 0")
         self.__height = value
