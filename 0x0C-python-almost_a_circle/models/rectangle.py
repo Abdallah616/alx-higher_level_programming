@@ -21,8 +21,8 @@ class Rectangle(Base):
 
         @width.setter
         def width(self, value):
-             self.validate_integer("width", value, False)
-             self.__width = value
+            self.validate_integer("width", value, False)
+            self.__width = value
 
         @property
         def height(self):
@@ -31,8 +31,8 @@ class Rectangle(Base):
 
         @height.setter
         def height(self, value):
-             self.validate_integer("height", value, False)
-             self.__height = value
+            self.validate_integer("height", value, False)
+            self.__height = value
 
         @property
         def x(self):
@@ -41,8 +41,8 @@ class Rectangle(Base):
 
         @x.setter
         def x(self, value):
-             self.validate_integer("x", value)
-             self.__x = value
+            self.validate_integer("x", value)
+            self.__x = value
 
         @property
         def y(self):
@@ -51,8 +51,8 @@ class Rectangle(Base):
 
         @y.setter
         def y(self, value):
-             self.validate_integer("y", value)
-             self.__y = value
+            self.validate_integer("y", value)
+            self.__y = value
 
         def validate_integer(self, name, value, eq=True):
             '''Method for validating inputs.'''
@@ -63,3 +63,12 @@ class Rectangle(Base):
             elif not eq and value <= 0:
                 raise ValueError("{} must be > 0".format(name))
 
+        def area(self):
+            '''method computing area of this rectangle.'''
+            return self.width * self.height
+
+        def display(self):
+            '''Prints string representation of this rectangle.'''
+            s = '\n' * self.y + \
+                (' ' * self.x + '#' * self.width + '\n') * self.height
+            print(s, end='')
